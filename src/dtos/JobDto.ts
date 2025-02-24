@@ -50,7 +50,7 @@ export const jobIdZodSchema = z.object({
 });
 
 export const userIdZodSchema = z.object({
-    userId: z.number()
+    userId: z.string()
 });
 
 export const createFilterZodSchema = z.object({

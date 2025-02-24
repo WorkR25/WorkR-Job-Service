@@ -39,7 +39,7 @@ async function getAllFulltimeJobsByEmployerId(this: FastifyInstance, req: Fastif
     try {
         const requestParams = req.params as UserIdDto;
         const token = req.headers['x-access-token'] as string;
-        const response = await this.jobService.getAllFulltimeJobsByEmployerId(requestParams.userId, token);
+        const response = await this.jobService.getAllFulltimeJobsByEmployerId(Number(requestParams.userId), token);
         SuccessResponse.data = response;
         return res.status(StatusCodes.OK).send(SuccessResponse);
     } catch (error) {
@@ -51,7 +51,7 @@ async function getAllIntershipJobsByEmployerId(this: FastifyInstance, req: Fasti
     try {
         const requestParams = req.params as UserIdDto;
         const token = req.headers['x-access-token'] as string;
-        const response = await this.jobService.getAllInternshipJobsByEmployerId(requestParams.userId, token);
+        const response = await this.jobService.getAllInternshipJobsByEmployerId(Number(requestParams.userId), token);
         SuccessResponse.data = response;
         return res.status(StatusCodes.OK).send(SuccessResponse);
     } catch (error) {
@@ -63,7 +63,7 @@ async function getAllPendingJobs(this: FastifyInstance, req: FastifyRequest, res
     try {
         const queryParams = req.query as UserIdDto;
         const token = req.headers['x-access-token'] as string;
-        const response = await this.jobService.getAllPendingJobs(queryParams.userId, token);
+        const response = await this.jobService.getAllPendingJobs(Number(queryParams.userId), token);
         SuccessResponse.data = response;
         return res.status(StatusCodes.OK).send(SuccessResponse);
     } catch (error) {
