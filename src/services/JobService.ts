@@ -53,7 +53,7 @@ class JobService {
 
     async getAllFulltimeJobsByEmployerId(employerId: number, token: string) {
         try {
-            const user: AxiosResponse<User> = await axios.get(`http://localhost:4000/api/v1/users/${employerId}`, {
+            const user: AxiosResponse<User> = await axios.get(`https://user.workr.club/api/v1/users/${employerId}`, {
                 headers: {
                     'x-access-token': token
                 }
@@ -77,7 +77,7 @@ class JobService {
 
     async getAllInternshipJobsByEmployerId(employerId: number, token: string) {
         try {
-            const user: AxiosResponse<User> = await axios.get(`http://localhost:4000/api/v1/users/${employerId}`, {
+            const user: AxiosResponse<User> = await axios.get(`https://user.workr.club/api/v1/users/${employerId}`, {
                 headers: {
                     'x-access-token': token
                 }
@@ -101,7 +101,7 @@ class JobService {
 
     async getAllPendingJobs(userId: number, token: string) {
         try {
-            const user: AxiosResponse<User> = await axios.get(`http://localhost:4000/api/v1/users/${userId}`, {
+            const user: AxiosResponse<User> = await axios.get(`https://user.workr.club/api/v1/users/${userId}`, {
                 headers: {
                     'x-access-token': token
                 },
@@ -147,7 +147,7 @@ class JobService {
     async approveJob(jobId: string, userId: number, token: string) {
         try {
             await this.jobRepository.get(jobId, 'jobId');
-            const user: AxiosResponse<User> = await axios.get(`http://localhost:4000/api/v1/users/${userId}`, {
+            const user: AxiosResponse<User> = await axios.get(`https://user.workr.club/api/v1/users/${userId}`, {
                 headers: {
                     'x-access-token': token
                 },
